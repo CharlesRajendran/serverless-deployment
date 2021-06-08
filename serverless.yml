@@ -1,0 +1,18 @@
+service: serverless-deployment
+
+frameworkVersion: '2'
+
+plugins:
+  - serverless-layers
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: eu-west-1
+  deploymentBucket:
+    name: "ascentic-deployments-bucket"
+
+functions:
+  hello:
+    handler: handler.hello
